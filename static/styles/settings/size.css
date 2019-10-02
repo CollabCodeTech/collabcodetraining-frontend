@@ -1,0 +1,21 @@
+:root {
+  --size-biggest: 96px;
+  --size-big: 60px;
+  --size-medium: 48px;
+  --size-normal: 34px;
+  --size-small: 24px;
+  --size-smallest: 20px;
+
+  --size-subtitle-first: 16px;
+  --size-subtitle-second: 14px;
+  --size-body-first: 16px;
+  --size-body-second: 14px;
+  --size-button: 14px;
+  --size-caption: 12px;
+  --size-overline: 10px;
+
+  --size-weight-light: 300;
+  --size-weight-regular: 400;
+  --size-weight-medium: 500;
+  --size-weight-bold: 700;
+}

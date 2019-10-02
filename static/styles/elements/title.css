@@ -1,0 +1,35 @@
+h1 {
+  font-size: var(--size-biggest);
+  font-weight: var(--size-weight-light);
+  letter-spacing: -1.5px;
+}
+
+h2 {
+  font-size: var(--size-big);
+  font-weight: var(--size-weight-light);
+  letter-spacing: -0.5px;
+}
+
+h3 {
+  font-size: var(--size-medium);
+  font-weight: var(--size-weight-regular);
+  letter-spacing: 0;
+}
+
+h4 {
+  font-size: var(--size-normal);
+  font-weight: var(--size-weight-regular);
+  letter-spacing: 0.25px;
+}
+
+h5 {
+  font-size: var(--size-small);
+  font-weight: var(--size-weight-regular);
+  letter-spacing: 0;
+}
+
+h6 {
+  font-size: var(--size-smallest);
+  font-weight: var(--size-weight-medium);
+  letter-spacing: 0.15px;
+}
