@@ -26,10 +26,14 @@
     position: absolute;
     right: 0;
     width: 100%;
+    transform-origin: right center;
+    transform: scaleX(0);
     opacity: 0;
+    transition: opacity 100ms linear, transform 200ms linear;
   }
 
   .search-collab.-active > .input {
+    transform: scaleX(1);
     opacity: 1;
   }
 
@@ -38,10 +42,13 @@
     z-index: 1;
     margin-left: auto;
     cursor: pointer;
+    opacity: 1;
+    transition: opacity 150ms linear, transform 200ms linear;
   }
 
   .search-collab.-active > .button {
     opacity: 0;
+    transform: translateX(10px) scale(0.5);
   }
 </style>
 
