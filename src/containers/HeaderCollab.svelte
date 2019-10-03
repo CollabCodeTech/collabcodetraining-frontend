@@ -1,5 +1,6 @@
 <script>
   import LogoCollab from '../components/LogoCollab.svelte'
+  import SearchCollab from '../components/SearchCollab.svelte'
   import IconCollab from '../components/IconCollab.svelte'
 </script>
 
@@ -13,15 +14,22 @@
     padding-right: var(--gap-medium);
   }
 
-  :global(.header-collab) > .search {
-    margin-left: auto;
+  :global(.header-collab) > .search-collab {
+    --height: 44px;
+
+    margin-left: var(--gap-medium);
     margin-right: var(--gap-medium);
+    flex-grow: 2;
+    height: var(--height);
+  }
+
+  @media (min-width: 1920px) {
   }
 </style>
 
 <header class="header-collab">
   <LogoCollab />
 
-  <IconCollab className="search" name="search" alt="Buscar conteúdo no site" />
+  <SearchCollab />
   <IconCollab name="more_vert" alt="Mais informações" />
 </header>

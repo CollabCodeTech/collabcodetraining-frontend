@@ -1,5 +1,6 @@
 body {
   font-size: var(--size-body-first);
+  font-family: 'Comfortaa', sans-serif;
   background-repeat: no-repeat;
   background-color: var(--color-purple-navy);
   background-image: linear-gradient(

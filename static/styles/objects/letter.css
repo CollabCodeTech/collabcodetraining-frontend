@@ -22,7 +22,7 @@
   letter-spacing: 0.25px;
 }
 
-.button {
+.letter-button {
   font-size: var(--size-button);
   font-weight: var(--size-weight-medium);
   letter-spacing: 1.25px;
