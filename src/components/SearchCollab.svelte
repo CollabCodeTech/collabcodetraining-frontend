@@ -50,6 +50,7 @@
   <input
     class="button"
     type="image"
+    alt="Buscar"
     src="img/dark/icon/search.svg"
     on:click|preventDefault={toggleActive} />
 </form>
