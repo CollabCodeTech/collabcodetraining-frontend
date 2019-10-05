@@ -3,6 +3,7 @@
 
   export let onClick
   export let changeOrientation
+  export let setElapsedTime
   export let paused = true
   export let elapsedTime = '00:00'
   export let duration = '00:00'
@@ -96,9 +97,10 @@
     <IconCollab className="pause" name="pause" alt="Pausar vídeo" />
   </li>
   <li class="time overline">{elapsedTime}</li>
-  <li class="progress" style={`--progress: ${progress}`}>
-    {elapsedTime} - {duration}
-  </li>
+  <li
+    class="progress"
+    style={`--progress: ${progress}`}
+    on:click={setElapsedTime} />
   <li class="time overline">{duration}</li>
   <li class="screen" on:click={changeOrientation}>
     <IconCollab
