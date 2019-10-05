@@ -1,9 +1,14 @@
 <script>
+  import { afterUpdate } from 'svelte'
   import ControlCollab from './ControlCollab.svelte'
 
   let video
   let paused = true
   let clicked = false
+  let time = 0
+  let duration
+  let orientation = 'portrait'
+  $: progress = (time / duration).toFixed(5)
 
   function play(event) {
     clicked = true
@@ -16,6 +21,21 @@
       paused = true
     }
   }
+
+  function format(seconds) {
+    if (isNaN(seconds)) return '...'
+
+    let minutes = Math.floor(seconds / 60)
+    if (minutes < 10) minutes = '0' + minutes
+    seconds = Math.floor(seconds % 60)
+    if (seconds < 10) seconds = '0' + seconds
+
+    return `${minutes}:${seconds}`
+  }
+
+  function changeOrientation() {
+    orientation = orientation === 'portrait' ? 'landscape' : 'portrait'
+  }
 </script>
 
 <style>
@@ -24,6 +44,24 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .wrapper.landscape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vh;
+    height: 100vw;
+    transform-origin: left top;
+    transform: rotate(90deg) translateY(-100%);
+    z-index: 1;
+  }
+  @media (orientation: landscape) {
+    .wrapper.landscape {
+      transform: rotate(0) translateY(0);
+      width: 100vw;
+      height: 100vh;
+    }
   }
 
   .wrapper::before {
@@ -64,11 +102,10 @@
     width: calc(100% - var(--gap-small) * 2);
     height: var(--height);
     border-radius: calc(var(--height) / 3);
-    margin-left: var(--gap-small);
-    margin-right: var(--gap-small);
-    opacity: 1;
+    opacity: 0;
     transition: opacity 150ms linear;
   }
+
   .wrapper:hover > :global(.control-collab),
   .wrapper:focus > :global(.control-collab) {
     opacity: 1;
@@ -98,15 +135,24 @@
 </style>
 
 <div
-  class={`wrapper ${clicked && (paused ? '-pause' : '-play')}`}
+  class={`wrapper ${orientation} ${clicked && (paused ? '-pause' : '-play')}`}
   on:click={play}>
   <video
     class="player-collab"
+    poster="http://sveltejs.github.io/assets/caminandes-llamigos.jpg"
     src="http://sveltejs.github.io/assets/caminandes-llamigos.mp4"
     bind:paused
-    bind:this={video}>
+    bind:this={video}
+    bind:currentTime={time}
+    bind:duration>
     Por favor, atualize seu navegador!!!
   </video>
 
-  <ControlCollab {paused} onClick={play} />
+  <ControlCollab
+    {paused}
+    onClick={play}
+    {changeOrientation}
+    elapsedTime={format(time)}
+    duration={format(duration)}
+    {progress} />
 </div>

@@ -1,3 +1,8 @@
+*::-webkit-media-controls-panel {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
 body {
   font-size: var(--size-body-first);
   font-family: 'Comfortaa', sans-serif;

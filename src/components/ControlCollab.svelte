@@ -1,13 +1,18 @@
 <script>
   import IconCollab from './IconCollab.svelte'
 
-  export let paused = true
   export let onClick
+  export let changeOrientation
+  export let paused = true
+  export let elapsedTime = '00:00'
+  export let duration = '00:00'
+  export let progress = 0
 </script>
 
 <style>
   .control-collab {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
     padding-left: var(--gap-normal);
@@ -16,6 +21,9 @@
   }
 
   .control-collab > :global(li) {
+    display: flex;
+    align-items: center;
+    height: 100%;
     cursor: pointer;
   }
 
@@ -23,10 +31,7 @@
     --size: 24px;
 
     position: relative;
-    display: flex;
     width: var(--size);
-    height: 100%;
-    align-items: center;
     margin-right: var(--gap-small);
   }
 
@@ -52,6 +57,36 @@
 
   .control-collab > .time {
     color: var(--color-floral-white);
+    font-weight: var(--size-weight-light);
+    margin-right: var(--gap-small);
+    width: 38px;
+  }
+
+  .control-collab > .progress {
+    --height: 5px;
+
+    position: relative;
+    color: transparent;
+    background-color: var(--color-eggshell-light);
+    flex-grow: 2;
+    height: var(--height);
+    border-radius: calc(var(--height) / 2);
+    overflow: hidden;
+    margin-right: var(--gap-small);
+  }
+
+  .control-collab > .progress::before {
+    content: '';
+
+    position: absolute;
+    background-color: var(--color-fiery-rose);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--height);
+    border-radius: calc(var(--height) / 2);
+    transform-origin: left center;
+    transform: scaleX(var(--progress));
   }
 </style>
 
@@ -60,8 +95,21 @@
     <IconCollab className="play" name="play_arrow" alt="Inciar Vídeo" />
     <IconCollab className="pause" name="pause" alt="Pausar vídeo" />
   </li>
-  <li class="time overline">1:34</li>
-  <li class="progress" />
-  <li class="duration" />
-  <li class="screen" />
+  <li class="time overline">{elapsedTime}</li>
+  <li class="progress" style={`--progress: ${progress}`}>
+    {elapsedTime} - {duration}
+  </li>
+  <li class="time overline">{duration}</li>
+  <li class="screen" on:click={changeOrientation}>
+    <IconCollab
+      className="fullscreen"
+      name="fullscreen"
+      alt="Vídeo em tela cheia" />
+  </li>
+  <li class="more">
+    <IconCollab
+      className="more_vert"
+      name="more_vert"
+      alt="Mais informações do vídeo13" />
+  </li>
 </ul>
