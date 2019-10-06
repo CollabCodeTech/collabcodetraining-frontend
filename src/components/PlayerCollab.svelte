@@ -38,16 +38,17 @@
   }
 
   function setElapsedTime(event) {
-    const { clientX } = event
-    const { x, width } = this.getBoundingClientRect()
-    const positionMouseXInClick = clientX - x
     paused = true
-    progress = positionMouseXInClick / width
-    time = progress * duration
-    paused = false
 
-    console.log('positionMouseXInClick', positionMouseXInClick)
-    console.log('width', width)
+    requestAnimationFrame(() => {
+      const { clientX } = event
+      const { x, width } = this.getBoundingClientRect()
+      const positionMouseXInClick = clientX - x
+
+      progress = positionMouseXInClick / width
+      time = progress * duration
+      paused = false
+    })
   }
 </script>
 
