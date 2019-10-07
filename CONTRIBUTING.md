@@ -21,7 +21,8 @@ We have an official [Discord](https://discord.gg/YeeEAYj) server where we can gi
 6. Submit your pull request.
 
 We use [GitFlow](https://nvie.com/posts/a-successful-git-branching-model/) so unless your PR is a `hotfix`, your feature branch must be created from the `develop` branch.
-TIP: This [Git extension](https://github.com/nvie/gitflow) makes Git Flow a piece of cake
+
+**TIP:** This [Git extension](https://github.com/nvie/gitflow) makes Git Flow a piece of cake. GitKraken also has [built-in support](https://support.gitkraken.com/git-workflows-and-extensions/git-flow/) for GitFlow
 
 ## Styleguides
 ### Git Commit Styleguide
