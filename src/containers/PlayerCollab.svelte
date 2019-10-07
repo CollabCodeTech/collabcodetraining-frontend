@@ -1,7 +1,7 @@
 <script>
   import { onMount } from 'svelte'
-  import ControlCollab from './ControlCollab.svelte'
-  import PlayerMore from './PlayerMore.svelte'
+  import PlayerControl from '../components/PlayerControl.svelte'
+  import PlayerMore from '../components/PlayerMore.svelte'
 
   let video
   let paused = true
@@ -129,7 +129,7 @@
     width: 100%;
   }
 
-  .wrapper > :global(.control-collab) {
+  .wrapper > :global(.player-control) {
     --height: 30px;
 
     position: absolute;
@@ -143,8 +143,8 @@
     transition: opacity 100ms linear, transform 200ms linear;
   }
 
-  .wrapper:hover > :global(.control-collab),
-  .wrapper:focus > :global(.control-collab) {
+  .wrapper:hover > :global(.player-control),
+  .wrapper:focus > :global(.player-control) {
     transform: translateY(0);
     opacity: 1;
     transition: opacity 400ms linear, transform 200ms linear;
@@ -215,7 +215,7 @@
     Por favor, atualize seu navegador!!!
   </video>
 
-  <ControlCollab
+  <PlayerControl
     {showMore}
     {disableActiveControl}
     {paused}

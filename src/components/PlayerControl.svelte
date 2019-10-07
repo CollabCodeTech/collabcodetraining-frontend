@@ -14,7 +14,7 @@
 </script>
 
 <style>
-  .control-collab {
+  .player-control {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,22 +24,22 @@
     background-color: var(--color-arsenic-light);
   }
 
-  .control-collab > :global(li) {
+  .player-control > :global(li) {
     display: flex;
     align-items: center;
     height: 100%;
     cursor: pointer;
   }
 
-  .control-collab > :global(li) > :global(img) {
+  .player-control > :global(li) > :global(img) {
     transition: transform 100ms linear;
   }
 
-  .control-collab > :global(li):hover > :global(img) {
+  .player-control > :global(li):hover > :global(img) {
     transform: scale(1.3);
   }
 
-  .control-collab > .playAndStop {
+  .player-control > .playAndStop {
     --size: 24px;
 
     position: relative;
@@ -47,7 +47,7 @@
     margin-right: var(--gap-small);
   }
 
-  .control-collab > .playAndStop > :global(img) {
+  .player-control > .playAndStop > :global(img) {
     position: absolute;
     width: var(--size);
     height: var(--size);
@@ -55,26 +55,26 @@
     transition: opacity 150ms linear, transform 100ms linear;
   }
 
-  .control-collab > .playAndStop > :global(img)::selection {
+  .player-control > .playAndStop > :global(img)::selection {
     background: transparent;
   }
 
-  .control-collab > .playAndStop.-play > :global(.play) {
+  .player-control > .playAndStop.-play > :global(.play) {
     opacity: 1;
   }
 
-  .control-collab > .playAndStop.-pause > :global(.pause) {
+  .player-control > .playAndStop.-pause > :global(.pause) {
     opacity: 1;
   }
 
-  .control-collab > .time {
+  .player-control > .time {
     color: var(--color-floral-white);
     font-weight: var(--size-weight-light);
     margin-right: var(--gap-small);
     width: 38px;
   }
 
-  .control-collab > .progress {
+  .player-control > .progress {
     --height: 5px;
 
     position: relative;
@@ -87,7 +87,7 @@
     margin-right: var(--gap-small);
   }
 
-  .control-collab > .progress::before {
+  .player-control > .progress::before {
     content: '';
 
     position: absolute;
@@ -101,21 +101,21 @@
     transform: scaleX(var(--progress));
   }
 
-  .control-collab > .screen > :global(img) {
+  .player-control > .screen > :global(img) {
     display: none;
   }
 
-  .control-collab > .screen.-fullscreen > :global(.exitFulllscreen) {
+  .player-control > .screen.-fullscreen > :global(.exitFulllscreen) {
     display: block;
   }
 
-  .control-collab > .screen.-noFullscreen > :global(.fullscreen) {
+  .player-control > .screen.-noFullscreen > :global(.fullscreen) {
     display: block;
   }
 </style>
 
 <ul
-  class="control-collab"
+  class="player-control"
   on:click|stopPropagation
   on:animationstart={disableActiveControl}>
   <li class={`playAndStop ${paused ? '-play' : '-pause'}`} on:click={play}>
