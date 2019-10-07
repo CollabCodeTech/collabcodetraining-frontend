@@ -9,19 +9,13 @@
 
 <style>
   .player-more {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+    position: relative;
     background-color: transparent;
-    transform: translateY(100%);
 
     transition: background-color 100ms linear;
   }
   .player-more.-active {
     background-color: var(--color-arsenic-light);
-    transform: translateY(0);
   }
 
   .player-more > .options {

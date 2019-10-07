@@ -78,6 +78,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
   }
 
   .wrapper.landscape {
@@ -137,13 +138,41 @@
     height: var(--height);
     border-radius: calc(var(--height) / 3);
     opacity: 0;
-    transition: opacity 150ms 1s linear;
+    transform: translateY(140%);
+
+    transition: opacity 100ms linear, transform 200ms linear;
   }
 
   .wrapper:hover > :global(.control-collab),
   .wrapper:focus > :global(.control-collab) {
+    transform: translateY(0);
     opacity: 1;
-    transition: opacity 150ms linear;
+    transition: opacity 400ms linear, transform 200ms linear;
+  }
+
+  .wrapper > :global(.player-more) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    transform: translateY(100%);
+  }
+
+  .wrapper > :global(.player-more.-active) {
+    transform: translateY(0);
+  }
+
+  .wrapper.landscape > :global(.player-more),
+  .wrapper.landscape :global(.options) {
+    width: 100vh;
+  }
+
+  @media (orientation: landscape) {
+    .wrapper.landscape > :global(.player-more),
+    .wrapper.landscape :global(.options) {
+      width: 100vw;
+    }
   }
 
   @keyframes pause {
