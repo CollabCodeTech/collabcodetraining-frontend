@@ -46,3 +46,7 @@ TIP: This [Git extension](https://github.com/nvie/gitflow) makes Git Flow a piec
     * :arrow_down: `:arrow_down:` when downgrading dependencies
     * :rotating_light: `:rotating_light:` when removing linter warnings
 * Full emoji reference in [gitmoji](https://gitmoji.carloscuesta.me/)
+
+### FrontEnd Styleguide & Layout
+
+Please check the layout on [Figma](https://www.figma.com/file/gL5DC1W2R9zhfCRRXAjJGn/CollabWorld.training?node-id=1%3A384). You must sign in to Figma to view the layout properties.
