@@ -1,10 +1,13 @@
 <script>
-  import { afterUpdate } from 'svelte'
+  import { onMount } from 'svelte'
   import ControlCollab from './ControlCollab.svelte'
+  import PlayerMore from './PlayerMore.svelte'
 
   let video
   let paused = true
+  let fullscreen = false
   let clicked = false
+  let activeMore = false
   let time = 0
   let duration
   let orientation = 'portrait'
@@ -35,6 +38,7 @@
 
   function changeOrientation() {
     orientation = orientation === 'portrait' ? 'landscape' : 'portrait'
+    fullscreen = !fullscreen
   }
 
   function setElapsedTime(event) {
@@ -49,6 +53,22 @@
       time = progress * duration
       paused = false
     })
+  }
+
+  function disableActiveControl() {
+    activeControl = false
+  }
+
+  function setActiveControl() {
+    activeControl = true
+  }
+
+  function showMore() {
+    activeMore = true
+  }
+
+  function hideMore() {
+    activeMore = false
   }
 </script>
 
@@ -117,12 +137,13 @@
     height: var(--height);
     border-radius: calc(var(--height) / 3);
     opacity: 0;
-    transition: opacity 150ms linear;
+    transition: opacity 150ms 1s linear;
   }
 
   .wrapper:hover > :global(.control-collab),
   .wrapper:focus > :global(.control-collab) {
     opacity: 1;
+    transition: opacity 150ms linear;
   }
 
   @keyframes pause {
@@ -149,7 +170,10 @@
 </style>
 
 <div
-  class={`wrapper ${orientation} ${clicked && (paused ? '-pause' : '-play')}`}
+  class={`wrapper 
+    ${orientation} 
+    ${clicked && (paused ? '-pause' : '-play')}
+  `}
   on:click={play}>
   <video
     class="player-collab"
@@ -163,11 +187,16 @@
   </video>
 
   <ControlCollab
+    {showMore}
+    {disableActiveControl}
     {paused}
-    onClick={play}
+    {play}
+    {fullscreen}
     {changeOrientation}
     {setElapsedTime}
     elapsedTime={format(time)}
     duration={format(duration)}
     {progress} />
+
+  <PlayerMore active={activeMore} hide={hideMore} />
 </div>

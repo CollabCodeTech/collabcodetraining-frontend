@@ -1,10 +1,13 @@
 <script>
   import IconCollab from './IconCollab.svelte'
 
-  export let onClick
+  export let play
   export let changeOrientation
+  export let disableActiveControl
+  export let showMore
   export let setElapsedTime
   export let paused = true
+  export let fullscreen = false
   export let elapsedTime = '00:00'
   export let duration = '00:00'
   export let progress = 0
@@ -28,6 +31,14 @@
     cursor: pointer;
   }
 
+  .control-collab > :global(li) > :global(img) {
+    transition: transform 100ms linear;
+  }
+
+  .control-collab > :global(li):hover > :global(img) {
+    transform: scale(1.3);
+  }
+
   .control-collab > .playAndStop {
     --size: 24px;
 
@@ -41,7 +52,7 @@
     width: var(--size);
     height: var(--size);
     opacity: 0;
-    transition: opacity 150ms linear;
+    transition: opacity 150ms linear, transform 100ms linear;
   }
 
   .control-collab > .playAndStop > :global(img)::selection {
@@ -89,10 +100,25 @@
     transform-origin: left center;
     transform: scaleX(var(--progress));
   }
+
+  .control-collab > .screen > :global(img) {
+    display: none;
+  }
+
+  .control-collab > .screen.-fullscreen > :global(.exitFulllscreen) {
+    display: block;
+  }
+
+  .control-collab > .screen.-noFullscreen > :global(.fullscreen) {
+    display: block;
+  }
 </style>
 
-<ul class="control-collab" on:click|stopPropagation>
-  <li class={`playAndStop ${paused ? '-play' : '-pause'}`} on:click={onClick}>
+<ul
+  class="control-collab"
+  on:click|stopPropagation
+  on:animationstart={disableActiveControl}>
+  <li class={`playAndStop ${paused ? '-play' : '-pause'}`} on:click={play}>
     <IconCollab className="play" name="play_arrow" alt="Inciar Vídeo" />
     <IconCollab className="pause" name="pause" alt="Pausar vídeo" />
   </li>
@@ -102,13 +128,19 @@
     style={`--progress: ${progress}`}
     on:click={setElapsedTime} />
   <li class="time overline">{duration}</li>
-  <li class="screen" on:click={changeOrientation}>
+  <li
+    class={`screen ${fullscreen ? '-fullscreen' : '-noFullscreen'}`}
+    on:click={changeOrientation}>
     <IconCollab
       className="fullscreen"
       name="fullscreen"
       alt="Vídeo em tela cheia" />
+    <IconCollab
+      className="exitFulllscreen"
+      name="fullscreen_exit"
+      alt="Sair da tela cheia" />
   </li>
-  <li class="more">
+  <li class="more" on:click={showMore}>
     <IconCollab
       className="more_vert"
       name="more_vert"
