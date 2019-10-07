@@ -9,9 +9,14 @@
   let clicked = false
   let activeMore = false
   let time = 0
+  let playbackRate = 2
   let duration
   let orientation = 'portrait'
   $: progress = (time / duration).toFixed(5)
+
+  onMount(() => {
+    console.log(video)
+  })
 
   function play(event) {
     clicked = true
@@ -54,7 +59,7 @@
       paused = false
     })
   }
-
+  13
   function disableActiveControl() {
     activeControl = false
   }
@@ -211,7 +216,8 @@
     bind:paused
     bind:this={video}
     bind:currentTime={time}
-    bind:duration>
+    bind:duration
+    bind:playbackRate>
     Por favor, atualize seu navegador!!!
   </video>
 
