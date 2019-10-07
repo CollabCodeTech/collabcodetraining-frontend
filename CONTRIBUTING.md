@@ -14,11 +14,14 @@ We have an official [Discord](https://discord.gg/YeeEAYj) server where we can gi
 ## How to submit a pull request?
 
 1. Fork [this repository](https://github.com/CollabCodeTech/collabcodetraining-frontend/fork).
-2. Create a new branch with the feature name. (Eg: add-chat-support, fix-website-header)
+2. Create a new branch with the feature name. (Eg: feature/chat-support, hotfix/website-header)
 3. Make your changes.
 4. Commit your changes. Please follow the [styleguides](#styleguides)
 5. Push your changes.
 6. Submit your pull request.
+
+We use [GitFlow](https://nvie.com/posts/a-successful-git-branching-model/) so unless your PR is a `hotfix`, your feature branch must be created from the `develop` branch.
+TIP: This [Git extension](https://github.com/nvie/gitflow) makes Git Flow a piece of cake
 
 ## Styleguides
 ### Git Commit Styleguide
@@ -29,18 +32,17 @@ We have an official [Discord](https://discord.gg/YeeEAYj) server where we can gi
 * Reference issues and pull requests liberally after the first line
 * Consider starting the commit message with an applicable emoji:
     * :art: `:art:` when improving the format/structure of the code
-    * :racehorse: `:racehorse:` when improving performance
-    * :non-potable_water: `:non-potable_water:` when plugging memory leaks
-    * :memo: `:memo:` when writing docs
+    * :zap: `:zap:` when improving performance
+    * :pencil: `:pencil:` when writing docs
     * :penguin: `:penguin:` when fixing something on Linux
     * :apple: `:apple:` when fixing something on macOS
     * :checkered_flag: `:checkered_flag:` when fixing something on Windows
     * :bug: `:bug:` when fixing a bug
     * :fire: `:fire:` when removing code or files
     * :green_heart: `:green_heart:` when fixing the CI build
-    * :white_check_mark: `:white_check_mark:` when adding tests
+    * :white_check_mark: `:white_check_mark:` when adding or updating tests
     * :lock: `:lock:` when dealing with security
     * :arrow_up: `:arrow_up:` when upgrading dependencies
     * :arrow_down: `:arrow_down:` when downgrading dependencies
-    * :shirt: `:shirt:` when removing linter warnings
+    * :rotating_light: `:rotating_light:` when removing linter warnings
 * Full emoji reference in [gitmoji](https://gitmoji.carloscuesta.me/)
