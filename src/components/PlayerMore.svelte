@@ -6,9 +6,15 @@
   export let hide
   export let activeSpeed = false
   export let showSpeed
-  let speed = 'Normal'
-  let speeds = ['0.25', '0.50', '0.75', 'Normal', '1.25', '1.50', '1.75', '2.0']
+  export let changePlaybackRate
+  let currentSpeed = '1.0'
+  let speeds = ['0.25', '0.50', '0.75', '1.0', '1.25', '1.50', '1.75', '2.0']
   let quality = '720p'
+
+  function updateSpeed(speed) {
+    changePlaybackRate(speed)
+    currentSpeed = speed
+  }
 </script>
 
 <style>
@@ -24,6 +30,7 @@
 
   .player-more > .options {
     --size-shadow: 5px;
+    --translateY: translateY(calc(var(--size-shadow) + 100% + 4px));
 
     position: absolute;
     box-sizing: border-box;
@@ -74,7 +81,7 @@
   }
 
   .player-more > .options.-speeds {
-    transform: translateY(100%);
+    transform: var(--translateY);
     transition: transform 100ms 100ms linear;
   }
 
@@ -95,7 +102,9 @@
           alt="Alterar velocidade do vídeo" />
         <figcaption>Velocidade</figcaption>
       </figure>
-      <span class="info">{speed}</span>
+      <span class="info">
+        {currentSpeed === '1.0' ? 'Normal' : currentSpeed}
+      </span>
     </li>
     <li class="item">
       <figure class="label">
@@ -111,7 +120,17 @@
 
   <ul class="options -speeds {activeSpeed && '-active'}">
     {#each speeds as speed}
-      <li class="speed">{speed}</li>
+      <li class="item" on:click={() => updateSpeed(speed)}>
+        <figure class="label">
+          {#if currentSpeed === speed}
+            <IconCollab
+              className="icon"
+              name="done"
+              alt="Velocidade selecionada" />
+          {/if}
+        </figure>
+        <span class="info">{speed === '1.0' ? 'Normal' : speed}</span>
+      </li>
     {/each}
   </ul>
 </menu>

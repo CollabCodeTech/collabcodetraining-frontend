@@ -10,7 +10,7 @@
   let activeMoreMain = false
   let activeSpeed = false
   let time = 0
-  let playbackRate = 2
+  let playbackRate = 1
   let duration
   let orientation = 'portrait'
   $: progress = (time / duration).toFixed(5)
@@ -79,6 +79,10 @@
   function showSpeed() {
     activeMoreMain = false
     activeSpeed = true
+  }
+
+  function changePlaybackRate(newPlaybackRate) {
+    playbackRate = newPlaybackRate
   }
 </script>
 
@@ -243,5 +247,6 @@
     hide={hideMore}
     {showSpeed}
     {activeSpeed}
+    {changePlaybackRate}
     activeMain={activeMoreMain} />
 </div>
