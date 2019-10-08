@@ -1,6 +1,6 @@
 <script>
   import HeaderCollab from '../containers/HeaderCollab.svelte'
-  import MenuMobileCollab from '../containers/MenuMobileCollab'
+  import MenuMobileCollab from '../containers/MenuMobileCollab.svelte'
 
   export let segment
 
@@ -8,6 +8,12 @@
 </script>
 
 <style>
+
+:global(.menu-mobile) {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+}
 
 </style>
 
