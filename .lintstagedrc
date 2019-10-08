@@ -1,0 +1,6 @@
+{
+    "*.{js,svelte}": [
+        "pretty-quick --staged",
+        "git add"
+    ]
+}
