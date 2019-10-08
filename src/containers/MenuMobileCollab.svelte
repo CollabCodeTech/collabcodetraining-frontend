@@ -23,7 +23,7 @@
     color: white;
   }
 
-  .menu-mobile > .menu-list > .menu-option > :global(a.selected) {
+  .menu-mobile > .menu-list > .menu-option > :global(a.-selected) {
     color: var(--color-fiery-rose);
   }
 </style>
@@ -34,7 +34,7 @@
       <li class="menu-option">
         <a
           href={option.toLowerCase()}
-          class={segment === option.toLowerCase() ? 'selected' : ''}>
+          class={segment === option.toLowerCase() ? '-selected' : ''}>
           
             <IconCollab
               alt={`Página de ${option.toLowerCase()}`}
