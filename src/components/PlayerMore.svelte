@@ -3,7 +3,10 @@
 
   export let active = false
   export let hide
+  export let activeSpeed = false
+  export let showSpeed
   let speed = 'Normal'
+  let speeds = ['0.25', '0.50', '0.75', 'Normal', '1.25', '1.50', '1.75', '2.0']
   let quality = '720p'
 </script>
 
@@ -68,13 +71,21 @@
   .player-more .info {
     margin-left: auto;
   }
+
+  .player-more > .speeds {
+    display: none;
+  }
+
+  .player-more > .speeds.-active {
+    display: block;
+  }
 </style>
 
 <menu
   class={`player-more ${active && '-active'}`}
   on:click|stopPropagation={hide}>
   <ul class="options">
-    <li class="item">
+    <li class="item" on:click|stopPropagation={showSpeed}>
       <figure class="label">
         <IconCollab
           className="icon"
@@ -94,5 +105,11 @@
       </figure>
       <span class="info">{quality}</span>
     </li>
+  </ul>
+
+  <ul class="options speeds {activeSpeed && '-active'}">
+    {#each speeds as speed}
+      <li class="speed">{speed}</li>
+    {/each}
   </ul>
 </menu>

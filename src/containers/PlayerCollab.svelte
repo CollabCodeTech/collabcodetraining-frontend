@@ -8,6 +8,7 @@
   let fullscreen = false
   let clicked = false
   let activeMore = false
+  let activeSpeed = false
   let time = 0
   let playbackRate = 2
   let duration
@@ -74,6 +75,11 @@
 
   function hideMore() {
     activeMore = false
+    activeSpeed = false
+  }
+
+  function showSpeed() {
+    activeSpeed = true
   }
 </script>
 
@@ -233,5 +239,5 @@
     duration={format(duration)}
     {progress} />
 
-  <PlayerMore active={activeMore} hide={hideMore} />
+  <PlayerMore active={activeMore} hide={hideMore} {showSpeed} {activeSpeed} />
 </div>
