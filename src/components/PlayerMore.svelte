@@ -2,6 +2,7 @@
   import IconCollab from './IconCollab.svelte'
 
   export let active = false
+  export let activeMain = false
   export let hide
   export let activeSpeed = false
   export let showSpeed
@@ -37,7 +38,7 @@
     transition: transform 150ms linear;
   }
 
-  .player-more.-active > .options {
+  .player-more > .options.-main.-active {
     transform: translateY(0);
   }
 
@@ -72,19 +73,20 @@
     margin-left: auto;
   }
 
-  .player-more > .speeds {
-    display: none;
+  .player-more > .options.-speeds {
+    transform: translateY(100%);
+    transition: transform 100ms 100ms linear;
   }
 
-  .player-more > .speeds.-active {
-    display: block;
+  .player-more > .options.-speeds.-active {
+    transform: translate(0);
   }
 </style>
 
 <menu
   class={`player-more ${active && '-active'}`}
   on:click|stopPropagation={hide}>
-  <ul class="options">
+  <ul class={`options -main ${activeMain && '-active'}`}>
     <li class="item" on:click|stopPropagation={showSpeed}>
       <figure class="label">
         <IconCollab
@@ -107,7 +109,7 @@
     </li>
   </ul>
 
-  <ul class="options speeds {activeSpeed && '-active'}">
+  <ul class="options -speeds {activeSpeed && '-active'}">
     {#each speeds as speed}
       <li class="speed">{speed}</li>
     {/each}
