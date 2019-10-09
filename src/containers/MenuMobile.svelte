@@ -8,6 +8,7 @@
   .menu-mobile {
     background-color: var(--color-arsenic);
     border-top: 2px solid var(--color-pomp-and-power);
+    box-shadow: 0px -2px 4px var(--color-dark-slate-grey);
   }
 
   .menu-mobile > .list {
