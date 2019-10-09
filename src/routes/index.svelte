@@ -1,13 +1,1 @@
-<script>
-  import PlayerCollab from '../containers/PlayerCollab.svelte'
-</script>
-
-<style>
-
-</style>
-
-<svelte:head>
-  <title>CollabCode Training</title>
-</svelte:head>
-
-<PlayerCollab />
+<h5>Aqui é Home! Em algum momento do universo teremos algo aqui!</h5>
