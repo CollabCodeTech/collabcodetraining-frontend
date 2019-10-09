@@ -8,17 +8,20 @@
 </script>
 
 <style>
-  :global(.menu-mobile) {
+  .layout {
+    padding-bottom: 60px;
+    margin-bottom: var(--gap-medium);
+  }
+
+  .layout > :global(.menu-mobile) {
     position: fixed;
     bottom: 0;
     width: 100vw;
   }
 </style>
 
-<HeaderCollab />
-
-<main>
+<main class="layout">
+  <HeaderCollab />
   <slot />
+  <MenuMobile {segment} {menu} />
 </main>
-
-<MenuMobile {segment} {menu} />
