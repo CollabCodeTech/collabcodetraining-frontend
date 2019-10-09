@@ -1,5 +1,4 @@
 <script>
-  import { onMount } from 'svelte'
   import PlayerControl from '../components/PlayerControl.svelte'
   import PlayerMore from '../components/PlayerMore.svelte'
 
@@ -8,15 +7,13 @@
   let fullscreen = false
   let clicked = false
   let activeMore = false
+  let activeMoreMain = false
+  let activeSpeed = false
   let time = 0
-  let playbackRate = 2
+  let playbackRate = 1
   let duration
   let orientation = 'portrait'
   $: progress = (time / duration).toFixed(5)
-
-  onMount(() => {
-    console.log(video)
-  })
 
   function play(event) {
     clicked = true
@@ -70,10 +67,22 @@
 
   function showMore() {
     activeMore = true
+    activeMoreMain = true
   }
 
   function hideMore() {
     activeMore = false
+    activeMoreMain = false
+    activeSpeed = false
+  }
+
+  function showSpeed() {
+    activeMoreMain = false
+    activeSpeed = true
+  }
+
+  function changePlaybackRate(newPlaybackRate) {
+    playbackRate = newPlaybackRate
   }
 </script>
 
@@ -233,5 +242,11 @@
     duration={format(duration)}
     {progress} />
 
-  <PlayerMore active={activeMore} hide={hideMore} />
+  <PlayerMore
+    active={activeMore}
+    hide={hideMore}
+    {showSpeed}
+    {activeSpeed}
+    {changePlaybackRate}
+    activeMain={activeMoreMain} />
 </div>
