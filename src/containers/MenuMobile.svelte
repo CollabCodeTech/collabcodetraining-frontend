@@ -23,7 +23,7 @@
     color: white;
   }
 
-  .menu-mobile :global(.action.-selected) {
+  .menu-mobile .action.-selected {
     color: var(--color-fiery-rose);
   }
 </style>
