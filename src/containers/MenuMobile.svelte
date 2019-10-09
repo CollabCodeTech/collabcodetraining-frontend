@@ -31,16 +31,14 @@
 
 <nav class="menu-mobile">
   <ul class="list">
-    {#each menu as option}
+    {#each menu as { href, label }}
       <li class="option">
-        <a
-          href={option.toLowerCase()}
-          class={`action ${segment === option.toLowerCase() ? '-selected' : ''}`}>
+        <a {href} class={`action ${segment === href ? '-selected' : ''}`}>
 
           <IconCollab
-            alt={`Página de ${option.toLowerCase()}`}
-            name={option && option.toLowerCase() === segment ? `${option.toLowerCase()}-selected` : option.toLowerCase()} />
-          {option}
+            alt={`Página de ${href}`}
+            name={href && href === segment ? `${href}-selected` : href} />
+          {label}
         </a>
       </li>
     {/each}

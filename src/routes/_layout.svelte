@@ -4,7 +4,12 @@
 
   export let segment
 
-  const menu = ['Cursos', 'Sala', 'Profile', 'Alertas']
+  const menu = [
+    { href: 'courses', label: 'Cursos' },
+    { href: 'classroom', label: 'Sala' },
+    { href: 'profile', label: 'Profile' },
+    { href: 'alerts', label: 'Alertas' },
+  ]
 </script>
 
 <style>
