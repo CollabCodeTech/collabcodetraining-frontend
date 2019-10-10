@@ -25,6 +25,10 @@
   }
 </style>
 
+<svelte:head>
+  <title>CollabCode Training</title>
+</svelte:head>
+
 <main class="layout">
   <HeaderCollab />
   <slot />
