@@ -23,6 +23,7 @@
     background-color: transparent;
 
     transition: background-color 100ms linear;
+    z-index: 100;
   }
   .player-more.-active {
     background-color: var(--color-arsenic-light);
