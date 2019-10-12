@@ -1,14 +1,14 @@
 <script>
     import IconCollab from '../components/IconCollab.svelte'
-	let deslikes = 0
+	let dislikes = 0
 
     function handleClick() {
-        deslikes += 1;
+        dislikes += 1;
     }
 </script>
 
 <style>
-    button {
+    .dislike-button {
         height: 40px;
         width: 100px;
         border-radius: 20px;
@@ -19,17 +19,17 @@
         margin: 20px 0 20px 16px;
     }
 
-    button:last-child {
+    .dislike-button:last-child {
         margin: 20px 0 0 5px;
     }
 
-    button > div {
+    .dislike-button > .items {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
     }
 
-    button > div > p {
+    .dislike-button > .items > .text {
         color: #FFF;
         font-size: 16px;
         line-height: 24px;
@@ -38,11 +38,13 @@
     }
 </style>
 
-<button on:click={handleClick}> 
-    <div>
+<button 
+    on:click={handleClick} 
+    class="dislike-button"> 
+    <div class="items">
         <IconCollab
-        name="deslike_button"
-        alt="Deslike Button" />
-        <p>{deslikes}</p>
+        name="dislike_button"
+        alt="Dislike Button" />
+        <p class="text">{dislikes}</p>
     </div>
 </button>

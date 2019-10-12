@@ -8,7 +8,7 @@
 </script>
 
 <style>
-    button {
+    .like-button {
         height: 40px;
         width: 100px;
         border-radius: 20px;
@@ -19,13 +19,13 @@
         margin: 20px 0 20px 16px;
     }
 
-    button > div {
+    .like-button > .items {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
     }
 
-    button > div > p {
+    .like-button > .items > .text {
         color: #FFF;
         font-size: 16px;
         line-height: 24px;
@@ -34,11 +34,13 @@
     }
 </style>
 
-<button on:click={handleClick}> 
-    <div>
+<button 
+    on:click={handleClick}
+    class="like-button"> 
+    <div class="items">
         <IconCollab
         name="like_button"
         alt="Like Button" />
-        <p>{likes}</p>
+        <p class="text">{likes}</p>
     </div>
 </button>

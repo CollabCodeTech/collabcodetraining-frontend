@@ -1,7 +1,7 @@
 <script>
   import HeaderCollab from '../containers/HeaderCollab.svelte'
   import LikeCollab from '../components/LikeCollab.svelte'
-  import DeslikeCollab from '../components/DeslikeCollab.svelte'
+  import DislikeCollab from '../components/DislikeCollab.svelte'
 
   export let segment
 </script>
@@ -15,5 +15,5 @@
 <main>
   <slot />
   <LikeCollab />
-  <DeslikeCollab />
+  <DislikeCollab />
 </main>
