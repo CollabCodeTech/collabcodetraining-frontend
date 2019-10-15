@@ -1,4 +1,6 @@
 <script>
+  import { onMount } from 'svelte'
+  import axios from 'axios'
   import PlayerControl from '../components/PlayerControl.svelte'
   import PlayerMore from '../components/PlayerMore.svelte'
 
@@ -13,7 +15,17 @@
   let playbackRate = 1
   let duration
   let orientation = 'portrait'
+  let src
   $: progress = (time / duration).toFixed(5)
+
+  onMount(() => {
+    axios
+      .get(
+        'https://cors-anywhere.herokuapp.com/https://player.vimeo.com/video/210321457/config'
+      )
+      .then(({ data }) => (src = data.request.files.progressive[0].url))
+      .catch(error => console.log(error))
+  })
 
   function play(event) {
     clicked = true
@@ -221,7 +233,7 @@
   <video
     class="player-collab"
     poster="http://sveltejs.github.io/assets/caminandes-llamigos.jpg"
-    src="http://sveltejs.github.io/assets/caminandes-llamigos.mp4"
+    {src}
     bind:paused
     bind:this={video}
     bind:currentTime={time}
