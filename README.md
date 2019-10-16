@@ -4,7 +4,15 @@
 
 An Open Source online course platform.
 
+### Prerequisites
+
+* Npm
+* Node (>=10.16.3)
+
+To install npm [GO TO this link](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+
 ## Getting Started
+
 
 1. Fork this repo and clone in your machine;
 
@@ -21,10 +29,6 @@ npm run dev
 
 This project uses Sapper for SvelteJS, if you have any doubt on how Sapper or SvelteJS works, please consult [sapper.svelte.dev](https://sapper.svelte.dev) and [svelte.dev](https://svelte.dev) for help getting started.
 
-### Prerequisites
-
-* Npm
-* Node (>=10.16.3)
 
 ## Running the tests
 
