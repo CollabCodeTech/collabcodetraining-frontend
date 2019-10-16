@@ -6,4 +6,4 @@
   /* your styles go here */
 </style>
 
-<slot />
+<h2 class="subtitle-first">CADASTRO</h2>

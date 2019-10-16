@@ -1,5 +1,5 @@
 <script>
-  import PlayerCollab from '../containers/PlayerCollab.svelte'
+  import PlayerCollab from '../../containers/PlayerCollab.svelte'
 </script>
 
 <svelte:head>
