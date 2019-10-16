@@ -1,7 +1,6 @@
 <script>
   import LogoCollab from '../components/LogoCollab.svelte'
   import SearchCollab from '../components/SearchCollab.svelte'
-  import LabelCollab from '../components/LabelCollab.svelte'
 </script>
 
 <style>
@@ -25,7 +24,6 @@
 
 <header class="header-collab">
   <LogoCollab />
-  <LabelCollab message="Aula 056" />
-  <LabelCollab />
+
   <SearchCollab />
 </header>
