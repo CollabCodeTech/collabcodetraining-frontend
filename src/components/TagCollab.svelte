@@ -1,5 +1,5 @@
 <script>
-  export let content = 'No text'
+  export let content = '...'
 </script>
 
 <style>
