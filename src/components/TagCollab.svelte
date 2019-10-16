@@ -1,10 +1,9 @@
 <script>
-  export let LabelCollab
   export let content = 'No text'
 </script>
 
 <style>
-  .label-collab {
+  .tag-collab {
     display: inline-block;
     width: var(--size-biggest);
     height: var(--size-normal);
@@ -13,7 +12,7 @@
 
     font-family: inherit;
     line-height: var(--size-normal);
-    font-size: var(--size-subtitle-first);
+    font-size: var(--size-overline);
     text-transform: uppercase;
     text-align: center;
     color: var(--color-floral-white);
@@ -23,4 +22,4 @@
   }
 </style>
 
-<label class="label-collab">{content}</label>
+<label class="tag-collab">{content}</label>

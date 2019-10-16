@@ -1,5 +1,6 @@
 <script>
   import PlayerCollab from '../../containers/PlayerCollab.svelte'
+  import TagCollab from '../../components/TagCollab.svelte'
 </script>
 
 <svelte:head>
@@ -7,3 +8,6 @@
 </svelte:head>
 
 <PlayerCollab />
+
+<TagCollab content="Aula 056" />
+<TagCollab content="Vídeo 1" />
