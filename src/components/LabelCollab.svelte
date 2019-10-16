@@ -1,6 +1,6 @@
 <script>
   export let LabelCollab
-  export let message = 'No text'
+  export let content = 'No text'
 </script>
 
 <style>
@@ -9,7 +9,7 @@
     display: inline-block;
     width: var(--size-biggest);
     height: var(--size-normal);
-    margin: 0 var(--gap-small) 0;
+    margin-right: var(--gap-small);
     box-sizing: border-box;
 
     /* font configuration */
@@ -26,4 +26,4 @@
   }
 </style>
 
-<label class="label-collab">{message}</label>
+<label class="label-collab">{content}</label>
