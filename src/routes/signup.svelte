@@ -1,9 +1,9 @@
 <script>
-  // your script goes here
+  import LogoCollab from '../components/LogoCollab.svelte'
 </script>
 
 <style>
-  /* your styles go here */
+
 </style>
 
-<h2 class="subtitle-first">CADASTRO</h2>
+<LogoCollab />
