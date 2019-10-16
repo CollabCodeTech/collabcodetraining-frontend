@@ -23,7 +23,7 @@
 </style>
 
 <header class="header-collab">
-  <LogoCollab />
+  <LogoCollab type="header-mobile" />
 
   <SearchCollab />
 </header>
