@@ -1,5 +1,5 @@
 <script>
-  export let label = ''
+  export let content = ''
 </script>
 
 <style>
@@ -29,4 +29,4 @@
   }
 </style>
 
-<button class="button-collab" type="submit">{label}</button>
+<button class="button-collab" type="submit">{content}</button>

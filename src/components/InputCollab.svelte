@@ -21,7 +21,6 @@
 
   .input-collab + .eye {
     display: flex;
-    position: relative;
     align-items: center;
     cursor: pointer;
   }

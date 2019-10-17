@@ -1,5 +1,6 @@
 <script>
   export let content = 'No content'
+  export let forName = 'No id'
 </script>
 
 <style>
@@ -11,4 +12,4 @@
   }
 </style>
 
-<label class="label-collab">{content}</label>
+<label class="label-collab" for={forName}>{content}</label>
