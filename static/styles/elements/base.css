@@ -14,3 +14,7 @@ body {
     var(--color-purple-navy) 35.42%
   );
 }
+
+input {
+  border: none;
+}
