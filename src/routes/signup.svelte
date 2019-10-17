@@ -3,6 +3,7 @@
   import TitleCollab from '../components/TitleCollab.svelte'
   import ButtonCollab from '../components/ButtonCollab.svelte'
   import FieldCollab from '../components/FieldCollab.svelte'
+  import ErrorCollab from '../components/ErrorCollab.svelte'
 </script>
 
 <style>
@@ -33,5 +34,7 @@
   type="password"
   name="password"
   placeholder="********" />
+
+<ErrorCollab content="mínimo de 8 caracteres" />
 
 <ButtonCollab content="Enviar" />
