@@ -15,12 +15,20 @@
 <TitleCollab content="Cadastro" uppercase />
 
 <LabelCollab content="Nome:" />
-<InputCollab type="text" name="name" placeholder="Seu nome" />
+<InputCollab id="name" type="text" name="name" placeholder="Seu nome" />
 
 <LabelCollab content="Email:" />
-<InputCollab type="email" name="email" placeholder="example@gmail.com" />
+<InputCollab
+  id="email"
+  type="email"
+  name="email"
+  placeholder="example@gmail.com" />
 
 <LabelCollab content="Senha:" />
-<InputCollab type="password" name="password" placeholder="********" />
+<InputCollab
+  id="password"
+  type="password"
+  name="password"
+  placeholder="********" />
 
 <ButtonCollab label="Enviar" />
