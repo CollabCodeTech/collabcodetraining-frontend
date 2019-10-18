@@ -1,40 +1,29 @@
 <script>
   import LogoCollab from '../components/LogoCollab.svelte'
   import TitleCollab from '../components/TitleCollab.svelte'
-  import ButtonCollab from '../components/ButtonCollab.svelte'
-  import FieldCollab from '../components/FieldCollab.svelte'
-  import ErrorCollab from '../components/ErrorCollab.svelte'
+
+  import FormSignup from '../containers/FormSignup.svelte'
 </script>
 
 <style>
+  .signup {
+    text-align: center;
+    padding: var(--gap-medium) var(--gap-normal) var(--gap-big);
+  }
 
+  .signup > :global(.logo-collab) {
+    margin-bottom: var(--gap-medium);
+  }
+
+  .signup > :global(.title-collab) {
+    margin-bottom: var(--gap-big);
+  }
 </style>
 
-<LogoCollab />
+<main class="signup">
+  <LogoCollab />
 
-<TitleCollab content="Cadastro" uppercase />
+  <TitleCollab content="Cadastro" uppercase />
 
-<FieldCollab
-  content="Nome:"
-  id="name"
-  type="text"
-  name="name"
-  placeholder="Seu nome" />
-
-<FieldCollab
-  content="Email:"
-  id="email"
-  type="email"
-  name="email"
-  placeholder="example@gmail.com" />
-
-<FieldCollab
-  content="Senha:"
-  id="password"
-  type="password"
-  name="password"
-  placeholder="********" />
-
-<ErrorCollab content="mínimo de 8 caracteres" />
-
-<ButtonCollab content="Enviar" />
+  <FormSignup />
+</main>

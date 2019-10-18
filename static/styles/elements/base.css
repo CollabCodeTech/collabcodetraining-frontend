@@ -3,6 +3,13 @@
   -webkit-appearance: none;
 }
 
+html,
+body,
+#sapper {
+  height: 100%;
+  min-width: 320px;
+}
+
 body {
   font-size: var(--size-body-first);
   font-family: 'Comfortaa', sans-serif;
