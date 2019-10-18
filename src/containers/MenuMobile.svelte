@@ -2,6 +2,8 @@
   import IconCollab from '../components/IconCollab.svelte'
   export let segment
   export let menu
+
+  console.log('segment', segment)
 </script>
 
 <style>
@@ -31,10 +33,9 @@
 
 <nav class="menu-mobile">
   <ul class="list">
-    {#each menu as { href, label }}
+    {#each menu as { href, label, icon }}
       <li class="option">
-        <a {href} class={`action ${segment === href ? '-selected' : ''}`}>
-
+        <a {href} class={`action ${segment === icon ? '-selected' : ''}`}>
           <IconCollab
             alt={`Página de ${label}`}
             name={href && href === segment ? `${href}-selected` : href} />
