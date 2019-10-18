@@ -36,7 +36,7 @@
         <a {href} class={`action ${segment === href ? '-selected' : ''}`}>
 
           <IconCollab
-            alt={`Página de ${href}`}
+            alt={`Página de ${label}`}
             name={href && href === segment ? `${href}-selected` : href} />
           {label}
         </a>
