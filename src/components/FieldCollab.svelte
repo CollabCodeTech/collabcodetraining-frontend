@@ -12,6 +12,7 @@
   export let minlength = ''
   export let maxlength = ''
   export let pattern = '.*'
+  export let onInput
   let invalid = false
   let messageError = ''
 
@@ -39,7 +40,7 @@
     event.preventDefault()
   }
 
-  function removeMessageError(event) {
+  function removeMessageError() {
     messageError = ''
     invalid = false
   }
@@ -90,7 +91,10 @@
     {maxlength}
     {pattern}
     onInvalid={validation}
-    onInput={removeMessageError} />
+    onInput={event => {
+      removeMessageError()
+      onInput(event)
+    }} />
 
   <ErrorCollab content={messageError} />
 </div>
