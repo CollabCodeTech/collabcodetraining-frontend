@@ -29,4 +29,4 @@
   }
 </style>
 
-<button class="button-collab" type="submit">{content}</button>
+<button class="button-collab">{content}</button>
