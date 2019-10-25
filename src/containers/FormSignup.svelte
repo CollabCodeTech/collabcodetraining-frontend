@@ -14,8 +14,10 @@
     user = { ...user, [name]: value }
   }
 
-  function saveUser() {
-    UserService.save(user)
+  async function saveUser() {
+    const res = await UserService.save(user)
+
+    console.log(res)
   }
 </script>
 

@@ -1,9 +1,13 @@
 import api from '../config/api'
 
 const save = async user => {
-  const res = await api.post('/users', user)
-  // const res = await api.get('/users')
-  console.log('RES', res)
+  try {
+    const res = await api.post('/users', user)
+
+    return res.data
+  } catch (error) {
+    return error
+  }
 }
 
 export default { save }
