@@ -36,7 +36,6 @@
 </style>
 
 <form class="form-signup" on:submit|preventDefault={saveUser}>
-
   <FieldCollab
     content="Nome:"
     id="name"
