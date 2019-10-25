@@ -1,44 +1,42 @@
 <script>
   import LogoCollab from '../components/LogoCollab.svelte'
   import TitleCollab from '../components/TitleCollab.svelte'
-
-  import FormSignup from '../containers/FormSignup.svelte'
+  import FormLogin from '../containers/FormLogin.svelte'
 </script>
 
 <style>
-  .signup {
+  .login {
     display: flex;
     height: 100vh;
     justify-content: center;
   }
 
-  .signup > .content {
+  .login > .content {
     text-align: center;
     width: 320px;
     padding: var(--gap-medium) var(--gap-normal) var(--gap-big);
   }
 
-  .signup :global(.logo-collab) {
+  .login :global(.logo-collab) {
     margin-bottom: var(--gap-medium);
   }
 
-  .signup :global(.title-collab) {
+  .login :global(.title-collab) {
     margin-bottom: var(--gap-big);
   }
 
   @media (min-height: 600px) {
-    .signup {
+    .login {
       align-items: center;
     }
   }
 </style>
 
-<main class="signup">
+<main class="login">
   <div class="content">
     <LogoCollab />
 
-    <TitleCollab content="Cadastro" uppercase />
-
-    <FormSignup />
+    <TitleCollab content="login" uppercase />
+    <FormLogin />
   </div>
 </main>

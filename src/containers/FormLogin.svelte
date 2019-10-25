@@ -1,53 +1,29 @@
 <script>
-  import UserService from '../services/user.service'
-
   import FieldCollab from '../components/FieldCollab.svelte'
   import ButtonCollab from '../components/ButtonCollab.svelte'
 
-  let user = {
-    name: '',
-    email: '',
-    password: '',
-  }
+  let user = {}
 
   function updateUser({ target: { name, value } }) {
     user = { ...user, [name]: value }
   }
-
-  async function saveUser() {
-    const res = await UserService.save(user)
-
-    console.log(res)
-  }
 </script>
 
 <style>
-  .form-signup {
+  .form-login {
     text-align: left;
   }
 
-  .form-signup > :global(.field-collab) {
+  .form-login > :global(.field-collab) {
     margin-bottom: var(--gap-big);
   }
 
-  .form-signup :global(.input-collab) {
+  .form-login :global(.input-collab) {
     margin-bottom: var(--gap-smallest);
   }
 </style>
 
-<form class="form-signup" on:submit|preventDefault={saveUser}>
-
-  <FieldCollab
-    content="Nome:"
-    id="name"
-    type="text"
-    name="name"
-    placeholder="Seu nome"
-    required
-    minlength="2"
-    pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+"
-    onInput={updateUser} />
-
+<form class="form-login" on:submit|preventDefault>
   <FieldCollab
     content="Email:"
     id="email"
@@ -67,5 +43,5 @@
     minlength="8"
     onInput={updateUser} />
 
-  <ButtonCollab content="Enviar" />
+  <ButtonCollab content="Entrar" />
 </form>
