@@ -2,6 +2,7 @@
   import LogoCollab from '../components/LogoCollab.svelte'
   import TitleCollab from '../components/TitleCollab.svelte'
   import FormLogin from '../containers/FormLogin.svelte'
+  import LinkCollab from '../components/LinkCollab.svelte'
 </script>
 
 <style>
@@ -25,6 +26,10 @@
     margin-bottom: var(--gap-big);
   }
 
+  .login :global(.link-collab) {
+    margin-top: var(--gap-normal);
+  }
+
   @media (min-height: 600px) {
     .login {
       align-items: center;
@@ -38,5 +43,7 @@
 
     <TitleCollab content="login" uppercase />
     <FormLogin />
+
+    <LinkCollab action="signup" content="Criar conta" />
   </div>
 </main>
