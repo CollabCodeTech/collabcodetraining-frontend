@@ -5,7 +5,7 @@
 
 <style>
   .link-collab {
-    display: inline-block;
+    display: block;
     color: var(--color-floral-white);
     font-size: var(--size-body-first);
     letter-spacing: 0.5px;
