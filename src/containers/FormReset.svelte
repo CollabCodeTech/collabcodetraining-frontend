@@ -11,24 +11,24 @@
 </script>
 
 <style>
-  .form-login {
+  .form-reset {
     text-align: left;
   }
 
-  .form-login > :global(.field-collab) {
+  .form-reset > :global(.warning-label) {
+    margin-bottom: var(--gap-biggest);
+  }
+
+  .form-reset > :global(.field-collab) {
     margin-bottom: var(--gap-big);
   }
 
-  .form-login > :global(.warning-label) {
-    margin-bottom: var(--gap-big);
-  }
-
-  .form-login :global(.input-collab) {
+  .form-reset :global(.input-collab) {
     margin-bottom: var(--gap-smallest);
   }
 </style>
 
-<form class="form-login" on:submit|preventDefault>
+<form class="form-reset" on:submit|preventDefault>
 
   <WarningLabel content="Informe seu e-mail para resetar a sua senha" />
 
