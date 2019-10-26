@@ -1,51 +1,42 @@
 <script>
   import LogoCollab from '../components/LogoCollab.svelte'
   import TitleCollab from '../components/TitleCollab.svelte'
-  import FormLogin from '../containers/FormLogin.svelte'
-  import LinkCollab from '../components/LinkCollab.svelte'
+  import FormReset from '../containers/FormReset.svelte'
 </script>
 
 <style>
-  .login {
+  .reset {
     display: flex;
     height: 100vh;
     justify-content: center;
   }
 
-  .login > .content {
+  .reset > .content {
     text-align: center;
     width: 320px;
     padding: var(--gap-medium) var(--gap-normal) var(--gap-big);
   }
 
-  .login :global(.logo-collab) {
+  .reset :global(.logo-collab) {
     margin-bottom: var(--gap-medium);
   }
 
-  .login :global(.title-collab) {
+  .reset :global(.title-collab) {
     margin-bottom: var(--gap-big);
   }
 
-  .login :global(.link-collab) {
-    margin-top: var(--gap-normal);
-  }
-
   @media (min-height: 600px) {
-    .login {
+    .reset {
       align-items: center;
     }
   }
 </style>
 
-<main class="login">
+<main class="reset">
   <div class="content">
     <LogoCollab />
 
-    <TitleCollab content="login" uppercase />
-    <FormLogin />
-
-    <LinkCollab action="reset" content="Resetar senha" />
-
-    <LinkCollab action="signup" content="Criar conta" />
+    <TitleCollab content="resetar senha" uppercase />
+    <FormReset />
   </div>
 </main>
