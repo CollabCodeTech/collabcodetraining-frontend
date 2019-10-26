@@ -33,7 +33,7 @@
   <WarningLabel content="Informe seu e-mail para resetar a sua senha" />
 
   <FieldCollab
-    content="Email:"
+    content="E-mail:"
     id="email"
     type="email"
     name="email"
