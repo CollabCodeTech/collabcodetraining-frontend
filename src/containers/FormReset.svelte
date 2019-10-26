@@ -1,6 +1,7 @@
 <script>
   import FieldCollab from '../components/FieldCollab.svelte'
   import ButtonCollab from '../components/ButtonCollab.svelte'
+  import WarningLabel from '../components/WarningLabel.svelte'
 
   let user = {}
 
@@ -10,22 +11,29 @@
 </script>
 
 <style>
-  .form-login {
+  .form-reset {
     text-align: left;
   }
 
-  .form-login > :global(.field-collab) {
+  .form-reset > :global(.warning-label) {
+    margin-bottom: var(--gap-biggest);
+  }
+
+  .form-reset > :global(.field-collab) {
     margin-bottom: var(--gap-big);
   }
 
-  .form-login :global(.input-collab) {
+  .form-reset :global(.input-collab) {
     margin-bottom: var(--gap-smallest);
   }
 </style>
 
-<form class="form-login" on:submit|preventDefault>
+<form class="form-reset" on:submit|preventDefault>
+
+  <WarningLabel content="Informe seu e-mail para resetar a sua senha" />
+
   <FieldCollab
-    content="Email:"
+    content="E-mail:"
     id="email"
     type="email"
     name="email"
@@ -33,16 +41,6 @@
     required
     onInput={updateUser} />
 
-  <FieldCollab
-    content="Senha:"
-    id="password"
-    type="password"
-    name="password"
-    placeholder="********"
-    required
-    minlength="8"
-    onInput={updateUser} />
-
-  <ButtonCollab content="Entrar" />
+  <ButtonCollab content="Resetar" />
 
 </form>
