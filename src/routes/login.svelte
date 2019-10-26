@@ -44,6 +44,8 @@
     <TitleCollab content="login" uppercase />
     <FormLogin />
 
+    <LinkCollab action="reset" content="Resetar senha" />
+
     <LinkCollab action="signup" content="Criar conta" />
   </div>
 </main>
