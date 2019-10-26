@@ -8,6 +8,7 @@
     color: var(--color-sandstorm);
     font-size: var(--size-smallest);
     font-weight: var(--size-weight-bold);
+    line-height: 1.5em;
   }
 </style>
 
