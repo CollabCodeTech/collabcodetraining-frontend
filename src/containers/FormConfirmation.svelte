@@ -37,7 +37,7 @@
     id="email"
     type="email"
     name="email"
-    placeholder="guaio@collabcode.tech"
+    placeholder="gueio@collabcode.tech"
     required
     onInput={updateUser} />
 
