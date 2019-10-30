@@ -30,7 +30,7 @@
 
 <form class="form-confirmation" on:submit|preventDefault>
 
-  <WarningLabel content="Você precisa confirmar o e-mail antes de efetuar o login. Verifiqueo e-mail que te enviamos para finalizar o seu cadastro." />
+  <WarningLabel content="Você precisa confirmar o e-mail antes de efetuar o login. Verifique o e-mail que te enviamos para finalizar o seu cadastro." />
 
   <FieldCollab
     content="Não recebeu o e-mail?"
