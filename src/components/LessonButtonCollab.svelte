@@ -18,8 +18,7 @@
     border-radius: 50%;
     border: 2px solid transparent;
 
-    font-family: Comfortaa;
-    font-size: 20px;
+    font-size: var(--size-smallest);
     text-align: center;
     line-height: var(--lesson-size);
     letter-spacing: 0.15px;

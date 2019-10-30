@@ -1,5 +1,4 @@
 <script>
-  import { onMount } from 'svelte'
   import TitleCollab from '../components/TitleCollab.svelte'
   import LessonButtonCollab from '../components/LessonButtonCollab.svelte'
 
