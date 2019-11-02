@@ -1,4 +1,5 @@
 <script>
+  import UserService from '../services/user.service'
   import FieldCollab from '../components/FieldCollab.svelte'
   import ButtonCollab from '../components/ButtonCollab.svelte'
 
@@ -6,6 +7,10 @@
 
   function updateUser({ target: { name, value } }) {
     user = { ...user, [name]: value }
+  }
+
+  async function login() {
+    const token = await UserService.login(user)
   }
 </script>
 
@@ -23,7 +28,7 @@
   }
 </style>
 
-<form class="form-login" on:submit|preventDefault>
+<form class="form-login" on:submit|preventDefault={login}>
   <FieldCollab
     content="Email:"
     id="email"
