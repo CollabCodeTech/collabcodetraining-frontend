@@ -12,9 +12,9 @@ const save = async user => {
 
 const login = async user => {
   try {
-    const res = await api.post('/auth/login', user)
+    const { status, data } = await api.post('/auth/login', user)
 
-    return res.data.token
+    return { status, data }
   } catch (error) {
     return error
   }

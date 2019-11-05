@@ -1,4 +1,5 @@
-<script>
+<script context="module">
+  import { goto } from '@sapper/app'
   import UserService from '../services/user.service'
   import FieldCollab from '../components/FieldCollab.svelte'
   import ButtonCollab from '../components/ButtonCollab.svelte'
@@ -9,8 +10,10 @@
     user = { ...user, [name]: value }
   }
 
-  async function login() {
-    const token = await UserService.login(user)
+  async function login({ defaultPrevented }) {
+    const { status } = await UserService.login(user)
+
+    status === 200 && goto('platform/courses')
   }
 </script>
 
@@ -28,7 +31,10 @@
   }
 </style>
 
-<form class="form-login" on:submit|preventDefault={login}>
+<form
+  action="/platform/courses"
+  class="form-login"
+  on:submit|preventDefault={login}>
   <FieldCollab
     content="Email:"
     id="email"
@@ -49,5 +55,4 @@
     onInput={updateUser} />
 
   <ButtonCollab content="Entrar" />
-
 </form>
