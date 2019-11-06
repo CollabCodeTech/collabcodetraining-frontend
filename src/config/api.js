@@ -1,5 +1,9 @@
 import axios from 'axios'
 
-export default axios.create({
+const api = axios.create({
   baseURL: 'http://localhost:5001/api',
 })
+
+api.interceptors.response.use(response => response, error => error.response)
+
+export default api

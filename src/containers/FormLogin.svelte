@@ -1,19 +1,28 @@
-<script context="module">
+<script>
   import { goto } from '@sapper/app'
   import UserService from '../services/user.service'
   import FieldCollab from '../components/FieldCollab.svelte'
   import ButtonCollab from '../components/ButtonCollab.svelte'
 
   let user = {}
+  let msgError = { email: '', password: '' }
 
   function updateUser({ target: { name, value } }) {
     user = { ...user, [name]: value }
   }
 
-  async function login({ defaultPrevented }) {
-    const { status } = await UserService.login(user)
+  async function login() {
+    const {
+      status,
+      data: { field, error },
+    } = await UserService.login(user)
 
-    status === 200 && goto('platform/courses')
+    if (status === 200) {
+      invalid = false
+      goto('platform/courses')
+    } else {
+      msgError = { [field]: error }
+    }
   }
 </script>
 
@@ -41,6 +50,8 @@
     type="email"
     name="email"
     placeholder="example@gmail.com"
+    messageError={msgError.email}
+    invalid={!!msgError.email}
     required
     onInput={updateUser} />
 
@@ -51,6 +62,8 @@
     name="password"
     placeholder="********"
     required
+    messageError={msgError.password}
+    invalid={!!msgError.password}
     minlength="8"
     onInput={updateUser} />
 
