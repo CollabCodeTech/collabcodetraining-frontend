@@ -18,7 +18,6 @@
     } = await UserService.login(user)
 
     if (status === 200) {
-      invalid = false
       goto('platform/courses')
     } else {
       msgError = { [field]: error }
