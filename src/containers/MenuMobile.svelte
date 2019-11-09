@@ -2,8 +2,6 @@
   import IconCollab from '../components/IconCollab.svelte'
   export let segment
   export let menu
-
-  console.log('segment', segment)
 </script>
 
 <style>
