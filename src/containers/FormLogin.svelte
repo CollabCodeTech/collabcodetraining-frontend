@@ -12,10 +12,12 @@
   }
 
   async function login() {
+    const res = await UserService.login(user)
+
     const {
       status,
       data: { field, error },
-    } = await UserService.login(user)
+    } = res
 
     if (status === 200) {
       goto('platform/courses')
