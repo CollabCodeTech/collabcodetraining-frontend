@@ -6,6 +6,23 @@ import babel from 'rollup-plugin-babel'
 import { terser } from 'rollup-plugin-terser'
 import config from 'sapper/config/rollup.js'
 import pkg from './package.json'
+import dotenv from 'dotenv'
+import fs from 'fs'
+import path from 'path'
+
+dotenv.config()
+
+const fileEnv = process.env.NODE_ENV ? `.env.${process.env.NODE_ENV}` : '.env'
+
+// get the env variables from the .env file relative to the current NODE_ENV
+const ENV_VARS = dotenv.parse(fs.readFileSync(path.resolve(__dirname, fileEnv)))
+
+const valuesEnvToReplace = () => {
+  return Object.entries(ENV_VARS).reduce((acc, [key, val]) => {
+    acc[`process.env.${key}`] = JSON.stringify(val)
+    return acc
+  }, {})
+}
 
 const mode = process.env.NODE_ENV
 const dev = mode === 'development'
@@ -26,6 +43,7 @@ export default {
       replace({
         'process.browser': true,
         'process.env.NODE_ENV': JSON.stringify(mode),
+        ...valuesEnvToReplace(),
       }),
       svelte({
         dev,
@@ -78,6 +96,7 @@ export default {
       replace({
         'process.browser': false,
         'process.env.NODE_ENV': JSON.stringify(mode),
+        ...valuesEnvToReplace(),
       }),
       svelte({
         generate: 'ssr',
