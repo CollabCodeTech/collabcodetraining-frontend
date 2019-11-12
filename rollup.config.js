@@ -12,10 +12,10 @@ import path from 'path'
 
 dotenv.config()
 
+const fileEnv = process.env.NODE_ENV ? `.env.${process.env.NODE_ENV}` : '.env'
+
 // get the env variables from the .env file relative to the current NODE_ENV
-const ENV_VARS = dotenv.parse(
-  fs.readFileSync(path.resolve(__dirname, `.env.${process.env.NODE_ENV}`))
-)
+const ENV_VARS = dotenv.parse(fs.readFileSync(path.resolve(__dirname, fileEnv)))
 
 const valuesEnvToReplace = () => {
   return Object.entries(ENV_VARS).reduce((acc, [key, val]) => {
