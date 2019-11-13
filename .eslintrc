@@ -3,9 +3,9 @@
   "parserOptions": {
     "sourceType": "module"
   },
-  "plugins": ["prettier", "svelte3"],
-  "extends": ["prettier"],
-  "rules": {
-    "prettier/prettier": "error"
-  }
+  "plugins": [
+    "svelte3"
+  ],
+  "extends": [],
+  "rules": {}
 }

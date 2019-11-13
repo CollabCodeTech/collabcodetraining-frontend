@@ -1,4 +1,5 @@
 <script>
+  import { onMount } from 'svelte'
   import HeaderCollab from '../../containers/HeaderCollab.svelte'
   import MenuMobile from '../../containers/MenuMobile.svelte'
 
