@@ -1,5 +1,6 @@
-import * as sapper from '@sapper/app'
+import { start, goto, prefetch, prefetchRoutes } from '@sapper/app'
 
-sapper.start({
+start({
   target: document.querySelector('#sapper'),
 })
+

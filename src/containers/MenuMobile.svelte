@@ -2,8 +2,6 @@
   import IconCollab from '../components/IconCollab.svelte'
   export let segment
   export let menu
-
-  console.log('segment', segment)
 </script>
 
 <style>
@@ -35,7 +33,10 @@
   <ul class="list">
     {#each menu as { href, label, icon }}
       <li class="option">
-        <a {href} class={`action ${segment === icon ? '-selected' : ''}`}>
+        <a
+          {href}
+          rel="prefetch"
+          class={`action ${segment === icon ? '-selected' : ''}`}>
           <IconCollab
             alt={`Página de ${label}`}
             name={icon && icon === segment ? `${icon}-selected` : icon} />
