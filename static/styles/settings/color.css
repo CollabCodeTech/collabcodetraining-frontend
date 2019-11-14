@@ -1,6 +1,7 @@
 :root {
   --color-arsenic: #3a4042;
   --color-arsenic-light: rgba(58, 64, 66, 0.5);
+  --color-granite-grey: #646165;
   --color-old-silver: #828282;
   --color-eggshell: #eae6da;
   --color-eggshell-light: rgba(234, 230, 218, 0.3);
@@ -11,4 +12,7 @@
   --color-dark-slate-grey: #385062;
   --color-purple-navy: #4c5b84;
   --color-bisque: #f7e4c5;
+  --color-sandstorm: #f5d547;
+
+  --color-pomp-and-power: #7c5e99;
 }

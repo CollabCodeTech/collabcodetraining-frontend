@@ -1,15 +1,9 @@
 <script>
-  import HeaderCollab from '../containers/HeaderCollab.svelte'
-
-  export let segment
+  // your script goes here
 </script>
 
 <style>
-
+  /* your styles go here */
 </style>
 
-<HeaderCollab />
-
-<main>
-  <slot />
-</main>
+<slot />
