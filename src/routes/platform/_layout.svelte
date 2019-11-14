@@ -21,9 +21,6 @@
     try {
       const { status, data } = await UserService.validate()
 
-      console.log('STATUS', status)
-      console.log('DATA', data)
-
       if (status !== 200) {
         goto('login')
 
