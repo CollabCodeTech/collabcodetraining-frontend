@@ -1,6 +1,6 @@
 <script>
+  import { goto } from '@sapper/app'
   import UserService from '../services/user.service'
-
   import FieldCollab from '../components/FieldCollab.svelte'
   import ButtonCollab from '../components/ButtonCollab.svelte'
 
@@ -10,14 +10,23 @@
     password: '',
   }
 
+  let msgError = { name: '', email: '', password: '' }
+
   function updateUser({ target: { name, value } }) {
     user = { ...user, [name]: value }
   }
 
   async function saveUser() {
-    const res = await UserService.save(user)
+    const { status, data } = await UserService.save(user)
 
-    console.log(res)
+    console.log('STATUS', status)
+    console.log('DATA', data)
+
+    if (status === 201) {
+      goto('login')
+    } else {
+      msgError = { [field]: error }
+    }
   }
 </script>
 
