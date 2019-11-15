@@ -19,11 +19,8 @@
   async function saveUser() {
     const { status, data } = await UserService.save(user)
 
-    console.log('STATUS', status)
-    console.log('DATA', data)
-
     if (status === 201) {
-      goto('login')
+      goto('confirmation')
     } else {
       msgError = { [field]: error }
     }
