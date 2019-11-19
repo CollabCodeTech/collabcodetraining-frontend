@@ -5,7 +5,7 @@
 
   let user = {}
 
-  function updateUser({ target: { name, value } }) {
+  function updateUser(name, value) {
     user = { ...user, [name]: value }
   }
 </script>
