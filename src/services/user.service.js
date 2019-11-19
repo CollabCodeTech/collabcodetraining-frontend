@@ -4,7 +4,7 @@ const save = async user => {
   try {
     const res = await api.post('/users', user)
 
-    return res.data
+    return res
   } catch (error) {
     return error
   }

@@ -30,14 +30,16 @@
 
 <form class="form-confirmation" on:submit|preventDefault>
 
-  <WarningLabel content="Você precisa confirmar o e-mail antes de efetuar o login. Verifique o e-mail que te enviamos para finalizar o seu cadastro." />
+  <WarningLabel
+    content="Enviamos um email para você confirmar sua conta. Entre no seu email
+    e clique no link para poder efetuar o login." />
 
   <FieldCollab
     content="Não recebeu o e-mail?"
     id="email"
     type="email"
     name="email"
-    placeholder="gueio@collabcode.tech"
+    placeholder="seu.email@gmail.com"
     required
     onInput={updateUser} />
 
