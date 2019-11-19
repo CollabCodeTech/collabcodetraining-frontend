@@ -1,4 +1,6 @@
 <script>
+  import { onMount } from 'svelte'
+
   export let id = 'No id'
   export let type = 'text'
   export let name = 'No name'
@@ -9,8 +11,16 @@
   export let minlength = 0
   export let maxlength = ''
   export let pattern = '.*'
+  export let update
 
   let inputCollab
+
+  onMount(() => {
+    const name = inputCollab.name
+    const value = inputCollab.value
+
+    update(name, value)
+  })
 
   function togglePassword() {
     type = type === 'password' ? 'text' : 'password'
