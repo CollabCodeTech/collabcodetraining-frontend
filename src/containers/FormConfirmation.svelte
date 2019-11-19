@@ -30,7 +30,9 @@
 
 <form class="form-confirmation" on:submit|preventDefault>
 
-  <WarningLabel content="Enviamos um email para você confirmar sua conta. Entre no seu email e clique no link para poder efetuar o login." />
+  <WarningLabel
+    content="Enviamos um email para você confirmar sua conta. Entre no seu email
+    e clique no link para poder efetuar o login." />
 
   <FieldCollab
     content="Não recebeu o e-mail?"

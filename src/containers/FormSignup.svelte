@@ -18,6 +18,7 @@
 
   async function saveUser() {
     const { status, data } = await UserService.save(user)
+    const { field, error } = data[0]
 
     if (status === 201) {
       goto('confirmation')
@@ -50,6 +51,8 @@
     placeholder="Seu nome"
     required
     minlength="2"
+    messageError={msgError.name}
+    invalid={!!msgError.name}
     pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+"
     onInput={updateUser} />
 
@@ -59,6 +62,8 @@
     type="email"
     name="email"
     placeholder="example@gmail.com"
+    messageError={msgError.email}
+    invalid={!!msgError.email}
     required
     onInput={updateUser} />
 
@@ -70,6 +75,8 @@
     placeholder="********"
     required
     minlength="8"
+    messageError={msgError.password}
+    invalid={!!msgError.password}
     onInput={updateUser} />
 
   <ButtonCollab content="Enviar" />
