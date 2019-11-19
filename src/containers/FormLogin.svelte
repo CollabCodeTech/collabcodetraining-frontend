@@ -7,7 +7,7 @@
   let user = {}
   let msgError = { email: '', password: '' }
 
-  function updateUser({ target: { name, value } }) {
+  function updateUser(name, value) {
     user = { ...user, [name]: value }
   }
 

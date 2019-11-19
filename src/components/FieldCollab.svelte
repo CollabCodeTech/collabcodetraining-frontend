@@ -90,10 +90,11 @@
     {minlength}
     {maxlength}
     {pattern}
+    update={onInput}
     onInvalid={validation}
-    onInput={event => {
+    onInput={({ target: { name, value } }) => {
       removeMessageError()
-      onInput(event)
+      onInput(name, value)
     }} />
 
   <ErrorCollab content={messageError} />
