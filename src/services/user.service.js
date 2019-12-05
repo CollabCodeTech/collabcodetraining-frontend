@@ -2,7 +2,7 @@ import api from '../config/api'
 
 const save = async user => {
   try {
-    const res = await api.post('/users', user)
+    const res = await api.post('/user', user)
 
     return res
   } catch (error) {
